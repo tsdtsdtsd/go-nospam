@@ -22,7 +22,7 @@ Take a look at the `/example` folder, it contains a simple usage example.
 
 ### Development setup
 
-You will need the following things installed and working on your system to start development on go-spam:
+You will need the following things installed and working on your system to start development on go-nospam:
 
 - [Go](https://golang.org) 1.7+
 
