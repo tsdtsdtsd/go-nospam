@@ -10,7 +10,7 @@ go:
 
 install:
   - go get github.com/tsdtsdtsd/go-nospam
-  - go get -v .
+  # - go get -v .
   - go get -v github.com/golang/lint/golint 
 
 script:
