@@ -10,6 +10,6 @@ type Rule interface {
 
 // Result is the result of a rules evaluation
 type Result struct {
-	Value float32
+	Score float32
 	Err   error
 }

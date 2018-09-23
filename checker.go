@@ -51,7 +51,7 @@ func (c *Checker) Evaluate(ud *user.Data) (float32, error) {
 		}
 
 		// For now, just accumulate scores
-		total += r.Value
+		total += r.Score
 	}
 
 	return total, nil

@@ -8,16 +8,16 @@ import (
 )
 
 type userDataCheck struct {
-	Description string
-	Data        user.Data
-	ShouldScore float32
+	Description   string
+	Data          user.Data
+	ExpectedScore float32
 }
 
 var userDataChecks = []userDataCheck{
 
 	userDataCheck{
-		Description: "BBCode spam",
-		ShouldScore: 1,
+		Description:   "BBCode spam",
+		ExpectedScore: 1,
 		Data: user.Data{
 			Name:  "Peter Griffin",
 			Email: "peter@griffinmail.fun",
@@ -25,9 +25,10 @@ var userDataChecks = []userDataCheck{
 			IP:    "192.168.10.15",
 		},
 	},
+
 	userDataCheck{
-		Description: "Valid comment",
-		ShouldScore: 0,
+		Description:   "Valid comment",
+		ExpectedScore: 0,
 		Data: user.Data{
 			Name:  "Peter Griffin",
 			Email: "peter@griffinmail.fun",
@@ -49,8 +50,8 @@ func TestDev(t *testing.T) {
 			t.Error(err)
 		}
 
-		if rating != check.ShouldScore {
-			t.Errorf("%s: rating should be %f but is %f", check.Description, check.ShouldScore, rating)
+		if rating != check.ExpectedScore {
+			t.Errorf("%s: rating should be %f but is %f", check.Description, check.ExpectedScore, rating)
 		}
 	}
 
