@@ -16,7 +16,7 @@ func main() {
 	rating, err := checker.Evaluate(
 		&user.Data{
 			Name:  "Peter Griffin",
-			Email: "peter@gmail.com",
+			Email: "peter@griffinmail.fun",
 			Text:  "Awesome! [url=www.thingy156.net]thing[/url]",
 			IP:    "192.168.10.15",
 		},

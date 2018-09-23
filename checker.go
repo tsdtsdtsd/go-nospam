@@ -40,18 +40,20 @@ func (c *Checker) Evaluate(ud *user.Data) (float32, error) {
 		go r.Evaluate(resultChan, ud)
 	}
 
-	var total float32
-	var r rule.Result
+	var (
+		total float32
+		res   rule.Result
+	)
 
 	// Fetch results
 	for i := 0; i < len(rules); i++ {
-		r = <-resultChan
-		if r.Err != nil {
-			return 0, r.Err
+		res = <-resultChan
+		if res.Err != nil {
+			return 0, res.Err
 		}
 
 		// For now, just accumulate scores
-		total += r.Score
+		total += res.Score
 	}
 
 	return total, nil
